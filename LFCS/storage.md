@@ -50,3 +50,6 @@ Visit [NFS] (https://github.com/mesivayenduri/cheats/blob/main/LFCS/nfs.md)
 
 ## NBD
 Visit [NBD] (https://github.com/mesivayenduri/cheats/blob/main/LFCS/nbd.md)
+
+## LVM
+Visit [LVM] (https://github.com/mesivayenduri/cheats/blob/main/LFCS/lvm.md)
