@@ -43,5 +43,10 @@ sdc      8:32   0    10G  0 disk
 
 
 
-# REMOTE FILE SYSTEMS : NFS
+# REMOTE FILE SYSTEMS : 
+
+## NFS
 Visit [NFS] (https://github.com/mesivayenduri/cheats/blob/main/LFCS/nfs.md)
+
+## NBD
+Visit [NBD] (https://github.com/mesivayenduri/cheats/blob/main/LFCS/nbd.md)

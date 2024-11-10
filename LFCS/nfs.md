@@ -5,10 +5,10 @@ Setting up Network file system involes 2 things.
 
 ## On the NFS Server side:
 ```bash
-    sudo apt install nfs-kernel-server
+sudo apt install nfs-kernel-server
 ```
-    -> After installing above required binaries we need to tell our server what filesystem/directories you want to share.
-    -> This can be done by simply mentioning the details in /etc/exports file
+-> After installing above required binaries we need to tell our server what filesystem/directories you want to share.
+-> This can be done by simply mentioning the details in /etc/exports file
 
 ```bash
 vim /etc/exports
