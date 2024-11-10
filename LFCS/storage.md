@@ -29,6 +29,14 @@
 
 
 
+| Advanced File System Permissions (ACL)Commands                | Description               |
+|-----------------------------------------------------|-------------------------------------|
+| setfacl  | To set file access control list to a file/directory  |
+| sudo apt install acl  | To install Access Control List capabilities  |
+| ```sudo setfacl --modify user:jeremy:rw <filename>```  | To set rw permissions to user jeremy  |
+
+
+
 ```bash
 vboxuser@lfcs-practice:~$ lsblk
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
