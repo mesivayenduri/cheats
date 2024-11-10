@@ -6,8 +6,13 @@
 | Command                        | Description               |
 |--------------------------------|---------------------------|
 | `lsblk`                        | List all block devices    |
-| `sudo fdisk --list /dev/sda`   | List of partitions on a block device    \#list &#35;list of partitions    |
-| `sudo cfdisk /dev/sdb` | List of partitions on a block device |
+| `sudo fdisk --list /dev/sda`   | List of partitions on a block device |
+| `sudo cfdisk /dev/sdb` | List of partitions on a block device (If you don't pass any blockdevice input, it defaults to /dev/sda) |
+| `swapon --show`  | To see if a system uses any swap memory/space  |
+| `sudo mkswap /dev/sdb3 AND  sudo swapon --verbose /dev/sdb3` | To formate a partition as swap |
+| `sudo swapoff /dev/sdb3` | To stop using a partition as a swap space |
+
+
 
 ```bash
 vboxuser@lfcs-practice:~$ lsblk
