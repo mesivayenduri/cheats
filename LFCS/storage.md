@@ -34,6 +34,21 @@
 | setfacl  | To set file access control list to a file/directory  |
 | sudo apt install acl  | To install Access Control List capabilities  |
 | ```sudo setfacl --modify user:jeremy:rw <filename>```  | To set rw permissions to user jeremy  |
+| ```sudo getfacl filename```  | To get acls set on a file  |
+| ``` sudo setfacl --modify mask:r <filename> ```  | This means that even if other ACL entries have write or execute permissions, they’ll be limited to read-only access because the mask is the "maximum allowed" permission.  |
+| ``` sudo setfacl --modify group:staff:rw <filename>```  | To set rw permission to group staff  |
+| ``` sudo setfacl --modify user:jeremy:-- <filename> ```  | To deny access to a user  |
+| ``` sudo setfacl --remove user:jeremy <filename> ```  | To remove an acl for jeremy |
+| ``` sudo setfacl --remove group:staff <filename> ```  | To remove an acl for staff group  |
+| ``` sudo setfacl --remove-all <filename> ```  | To remove all acl entries  |
+| ``` sudo setfacl --recursive -m user:jeremy:rwx <directory> ```  | To apply acl to a directory and all of its subdirectories and files  |
+| ``` sudo setfacl --recursive --remove group:sudo <directory> ```  | To remove acl recursively on a directory and of its subdirectories and files to a gorup |
+| ``` sudo setfacl --recursive --remove user:jeremy <directory> ```  | To remove acl recusively on a directory and of its subdirectories and files to a user  |
+| ``` sudo chattr +a <filename> ```  | To set append attribute on a file. This will make file only appendable  |
+| ``` sudo chattr -a <filename> ```  | To remove append attribute on a file  |
+| ``` sudo chattr +i <filename> ```  | To set immutable attribute on a file. This will make file immutable  |
+| ``` sudo chattr -i <filename> ```  | To remove immutable attribute on a file.  |
+| ``` lsattr <filename> ```  | To list/show attributes of a file/directory  |
 
 
 
