@@ -9,8 +9,8 @@
 | `sudo fdisk --list /dev/sda`   | List of partitions on a block device |
 | `sudo cfdisk /dev/sdb` | List of partitions on a block device (If you don't pass any blockdevice input, it defaults to /dev/sda) |
 | `swapon --show`  | To see if a system uses any swap memory/space  |
-| `sudo mkswap /dev/sdb3`  
-  `sudo swapon --verbose /dev/sdb3` | To formate a partition as swap |
+| `sudo mkswap /dev/sdb3` | To make or format /dev/sdb3 partition as swap |
+| `sudo swapon --verbose /dev/sdb3` | To start using /dev/sdb3 partition as swap |
 | `sudo swapoff /dev/sdb3` | To stop using a partition as a swap space |
 
 
