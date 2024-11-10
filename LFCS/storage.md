@@ -16,6 +16,16 @@
 | `sudo mkfs.ext4 /dev/sdb1`    | To format/create a partition as a ext4 file system |
 | `sudo tune2fs -L "Backup Volume" /dev/sdb1` | Tune2fs is the utility which can help us to adjust filesystem parameters  |
 | `sudo tune2fs -l /dev/sdb1` |  To check the parameters of a partitiion |
+| `sudo mount /dev/sdb1 /mnt/` | To mount the partition /dev/sdb1 to /mnt path (This is will not survive reboots) - To survive reboots check mount section |
+| `sudo umount /mnt` | To unmount the filesystem |
+| `sudo blkid /dev/sdb1` | To check the UUID of a partition |
+| `ls -l /dev/disk/by-uuid`  | To check UUID of all partitions  |
+| `findmnt`  | To show all mountpoints in the filesystem. Tt shows everything including lvms, etc |
+| `findmnt -t xfs,ext4` |  To show only real filesystems like ext4 or xfs mounted on this system |
+| `sudo mount -o ro /dev/sdb1 /mnt`| To mount a filesystem as ReadOnly |
+| `sudo mount -o rw,noexec,nosuid /dev/sdb1 /mnt`  | To mount a filesystem with rw, noexec ( noexec: makes it impossible to launch a program that is stored in the filesystem ) and nosuid ( nosuid: disables suid permision that can allow programs to run with root permission without needing sudo commad)   |
+| `sudo mount -o remount,ro /dev/sdb1 /mnt` | To remount the filesystem without needing to unmount and mount  |
+| `sudo blkid /dev/sdb1`  | To check UUID of a partition  |
 
 
 
@@ -30,3 +40,15 @@ sda      8:0    0    25G  0 disk
 sdb      8:16   0    10G  0 disk 
 sdc      8:32   0    10G  0 disk
 ```
+
+
+
+# REMOTE FILE SYSTEMS : NFS
+Setting up Network file system involes 2 things.
+    1. Setting up NFS Server
+    2. Setting up NFS Client
+
+# On the NFS Server side:
+    -> sudo apt install nfs-kernel-server
+    -> After installing above required binaries we need to tell our server what filesystem/directories you want to share.
+    -> This can be done by simply mentioning the details in /etc/exports file
