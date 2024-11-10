@@ -55,5 +55,15 @@ Setting up Network file system involes 2 things.
 
 ```bash
 vim /etc/exports
-    /etc 127.0.0.1(ro)
+/etc 127.0.0.1(ro)
+```
+
+### After Updating the above file we need to export it using below command
+```bash
+sudo exportfs -r  ( r means re-export)
+```
+
+### To list the exported NFS
+```bash
+sudo exportfs -v
 ```
