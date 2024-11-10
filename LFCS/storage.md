@@ -7,13 +7,13 @@
 |--------------------------------|---------------------------|
 | `lsblk`                        | List all block devices    |
 | `sudo fdisk --list /dev/sda`   | List of partitions on a block device |
-| `sudo cfdisk /dev/sdb` | List of partitions on a block device (If you don't pass any blockdevice input, it defaults to /dev/sda) |
+| `sudo cfdisk /dev/sdb`        | List of partitions on a block device (If you don't pass any blockdevice input, it defaults to /dev/sda) |
 | `swapon --show`  | To see if a system uses any swap memory/space  |
-| `sudo mkswap /dev/sdb3` | To make or format /dev/sdb3 partition as swap |
+| `sudo mkswap /dev/sdb3`   | To make or format /dev/sdb3 partition as swap |
 | `sudo swapon --verbose /dev/sdb3` | To start using /dev/sdb3 partition as swap |
-| `sudo swapoff /dev/sdb3` | To stop using a partition as a swap space |
-| `sudo mkfs.xfs /dev/sdb1` |  To format/create a partition as a xfs file system |
-| `sudo mkfs.ext4 /dev/sdb1`| To format/create a partition as a ext4 file system |
+| `sudo swapoff /dev/sdb3`  | To stop using a partition as a swap space |
+| `sudo mkfs.xfs /dev/sdb1`     |  To format/create a partition as a xfs file system |
+| `sudo mkfs.ext4 /dev/sdb1`    | To format/create a partition as a ext4 file system |
 | `sudo tune2fs -L "Backup Volume" /dev/sdb1` | Tune2fs is the utility which can help us to adjust filesystem parameters  |
 | `sudo tune2fs -l /dev/sdb1` |  To check the parameters of a partitiion |
 
