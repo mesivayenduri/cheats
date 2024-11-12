@@ -82,6 +82,39 @@ sudo lvresize --extents 100% VG mylvm/partition1
 sudo lvresize --size 2G mylvm/partition1
 ```
 
+### To remove an LV from volume group 'mylvm'
+```bash
+sudo lvremove mylvm/partition1
+```
+
+
+### Queston : Create a Logical Volume (LV). It should have these properties:
+
+1. The size of the LV should be 0.5 Gigabytes.
+
+2. Its name should be smalldata.
+
+3. The logical volume should be created on the volume group named volume1
+
+```bash
+sudo lvcreate --size 0.5G volume1 --name smalldata
+```
+
+
+### Question: Resize the Logical Volume called smalldata to 752 MB.
+
+This logical volume resides on the volume group called volume1.
+
+```bash
+To increase
+sudo lvresize -L+252M volume1/smalldata
+
+To Decrease
+sudo lvresize -L-12M volume1/smalldata
+```
+
+
+
 ### To view the paths LVs
 ```bash
 sudo lvdisplay
@@ -92,6 +125,10 @@ As we have partition created now, we can create the filesystem
 ```bash
 sudo mkfs.ext4 <lv-path>
 sudo mkfs.ext4 /dev/mylvm/partition1
+
+sudo mkfs.xfs <lv-path>
+sudo mkfs.xfs /dev/volume1/smalldata
+
 ```
 
 Once the filesystem is create we cannot resize the partition using ```sudo lvresize --size``` option.
