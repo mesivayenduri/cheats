@@ -22,3 +22,5 @@ sudo systemctl restart autofs && sudo systemctl enable autofs
 ls -lah /misc/backup
 
 # If the files were not accessed for 5mins files will be unmounted automatically
+
+```
