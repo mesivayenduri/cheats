@@ -10,7 +10,7 @@ openssl req -text -noout -verify -in request.csr
 ```
 
 
-## Generating X509 Certifiate
+## Generating X509 Self signed Certifiate
 ```bash
 openssl x509 -req -days 365 -in csr_request.csr -signkey privatekey.key -out certificate.crt
 ```
