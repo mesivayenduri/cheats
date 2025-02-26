@@ -60,6 +60,8 @@ Netplan will send the instructions to systemd's Network daemon called systemd-ne
 
 we can configs under /etc/netplan/<some-name>.yaml
 
+NOTE: Trick to find the sample file -> /usr/share/doc/netplan/examples/static.yaml
+
 network:
     ethernets:
         enp0s3:
@@ -82,6 +84,14 @@ network:
 > netplan try
 > netplan apply
 
+To check the network routes:
+> ip route
+
+To add default gateway:
+> ip route add default via <IP> dev <Interface name>
+
+If you have 2 interfaces with different default gateways:
+> ip route del default via <IP> dev <Interface name>
 
 To add nameservers at global level:
 We need to uncomment DNS under /etc/systemd/resolved.conf
@@ -92,7 +102,7 @@ To apply changes,
 To check the DNS,
 > resolvectl status
 
-To check onlt the dns server details
+To check only the dns server details
 > resolvectl dns
 
 
