@@ -68,3 +68,42 @@ http {
         }
 }
 ```
+
+
+## TLS/SSL Configuration with Self-Signed Certificates
+
+Generate Self Signed TLS/SSL certificates
+CN/CommonName: Provide Public IP Address of AWS Instance
+```bash
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+```
+
+```nginx
+events{}
+
+
+http {
+        server {
+
+                listen 443 ssl;
+                server_name 52.87.203.39;
+
+                ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+                ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
+
+                location / {
+                        proxy_pass http://52.87.203.39:80/;
+                        proxy_set_header Host $host;
+                        proxy_set_header X-Real-IP $remote_addr;
+                        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                }
+        }
+        server {
+
+                location / {
+                        proxy_pass http://52.87.203.39:80/;
+                }
+                listen 80;
+        }
+}
+```
