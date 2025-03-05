@@ -275,6 +275,11 @@ at 'now + 3 days'
 at 'now + 3 weeks'
 at 'now + 3 months'
 
+If you want to schedule a job using at
+> at 'now + 2 min'   ( this will enter you into a prompt where you can enter the script or command to execute )
+> at > /usr/bin/bash /home/vboxuser/backup.sh
+> at > ctrl + D   (to exit)
+
 atq ( display all the at jobs job-identifiers)
 
 atq -c <JOB-IDENTIFIER>

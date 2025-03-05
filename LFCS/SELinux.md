@@ -27,6 +27,12 @@ This will generate 2 files.
     -   mymodule.pp ( linux understandable format binary with all rules )
     -   mymodule.te ( Text format for humans to understand the rules )
 
+
+## WARNING NOTE:
+
+Make sure to execute "fixfiles -F onboot" before changing the selinux mode to enforcing.
+Then reboot. Otherwise system might crash and goes into unrecoverable mode.
+
 ## To change the mode of SELinux from permissive to Enforcing mode
 sudo setenforce 1
 
