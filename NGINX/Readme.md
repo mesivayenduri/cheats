@@ -49,3 +49,22 @@ http {
         }
 }
 ```
+
+## Backup server ( FailOver )
+> Only incase of primary fails, backup server will receive the request
+
+```nginx
+events{}
+http {
+        upstream backend_servers {
+                server IP_OF_BACKEND_SERVER_1;
+                server IP_OF_BACKEND_SERVER_2 backup;
+        }
+        server {
+                location / {
+                        proxy_pass http://backend_servers/;
+                }
+                listen 80;
+        }
+}
+```
